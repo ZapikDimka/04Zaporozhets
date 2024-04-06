@@ -36,6 +36,7 @@ namespace _04Zaporozhets.View
         public delegate void OnSaveButtonClicked();
         public event OnSaveButtonClicked onSavePressed;
 
+
         public delegate void OnCancelButtonClicked();
         public event OnCancelButtonClicked onCancelPressed;
 
@@ -72,14 +73,14 @@ namespace _04Zaporozhets.View
 
         private void onButtonClicked(object sender, RoutedEventArgs e)
         {
+            AgeCalculatorViewModel._checked = false;
             ButtonPressed();
-
-            if (onSavePressed != null)
+            MessageBox.Show("" + AgeCalculatorViewModel._checked);
+            if (AgeCalculatorViewModel._checked)
             {
                 onSavePressed();
             }
         }
-
 
         public void ButtonPressed()
         {
@@ -96,8 +97,10 @@ namespace _04Zaporozhets.View
             onTextChanged();
         }
 
-
-
+        private void onSaveButtonClicked(object sender, RoutedEventArgs e)
+        {
+            onSavePressed();
+        }
         private void onCancelButtonClicked(object sender, RoutedEventArgs e)
         {
             onCancelPressed();

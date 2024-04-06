@@ -199,27 +199,11 @@ namespace _04Zaporozhets.ViewModel
 
         private static readonly List<string> FirstNames = new List<string>
 {
-    "Dmytro", "Oleksandr", "Ivan", "Vasyl", "Andriy", "Mykola", "Serhiy", "Petro", "Oleh", "Volodymyr", "Anatoliy",
-    "Yuriy", "Taras", "Bohdan", "Yaroslav", "Roman", "Maksym", "Dmytro", "Artem", "Denys", "Andriy",
-    "Viktor", "Yevhen", "Hryhoriy", "Oleksiy", "Vitaliy", "Valeriy", "Anton", "Oleksiy", "Oleksandr", "Yakiv",
-    "Borys", "Mykhailo", "Anatoliy", "Volodymyr", "Mykola", "Oleksandr", "Serhiy", "Hennadiy", "Oleh",
-    "Yaroslav", "Vasyl", "Andriy", "Petro", "Yuriy", "Oleh", "Serhiy", "Pavlo", "Roman", "Oleksandr",
-    "Viktor", "Taras", "Artem", "Mykola", "Denys", "Andriy", "Yevhen", "Vitaliy", "Valeriy", "Hryhoriy",
-    "Yakiv", "Vasyl", "Borys", "Mykhailo", "Anatoliy", "Volodymyr", "Oleksiy", "Serhiy", "Trokhym", "Oleh",
-    "Yaroslav", "Andriy", "Petro", "Oleksandr", "Yuriy", "Taras", "Roman", "Oleh", "Hennadiy", "Vasyl",
-    "Mykola", "Anton", "Oleksandr", "Yevhen", "Andriy", "Serhiy", "Pavlo", "Oleh", "Artem", "Denys",
-    "Viktor", "Valeriy", "Hryhoriy", "Mykola", "Yakiv", "Vitaliy", "Borys", "Vasyl", "Yaroslav", "Oleksandr"
+    "Dmytro", "Oleksandr", "Ivan", "Vasyl", "Andriy", "Mykola", "Serhiy", "Petro", "Oleh", "Volodymyr", "Anatoliy"
 };
         private static readonly List<string> LastNames = new List<string>
 {
-    "Zaporozhets","Kovalenko", "Bondarenko", "Tkachenko", "Kravchenko", "Omelchenko", "Kovalchuk", "Boyko", "Tkachuk", "Moroz", "Koval",
-    "Zaytsev", "Pavlenko", "Polishchuk", "Shevchenko", "Romanenko", "Dubenko", "Kolesnik", "Savchenko", "Ponomarenko", "Symonenko",
-    "Kucherenko", "Shcherbak", "Babych", "Golub", "Rogov", "Havrylenko", "Melnichenko", "Pavlov", "Tymoshenko", "Yakovenko",
-    "Bilous", "Tkachenko", "Shvets", "Turchyn", "Gonchar", "Petriv", "Soroka", "Lysenko", "Kovalenko", "Kuzmenko",
-    "Kotenko", "Sydorenko", "Makarenko", "Zakharov", "Shcherbakov", "Kravets", "Vdovychenko", "Melnik", "Kuznetsov", "Yakymenko",
-    "Didenko", "Pavlov", "Doroshenko", "Shevchenko", "Nesterenko", "Lavrenko", "Prykhodko", "Zakharov", "Horban", "Borisenko",
-    "Krupa", "Chernysh", "Pavliuk", "Oliynyk", "Martynenko", "Shvets", "Savchuk", "Kovalchuk", "Pavlov",
-    "Dovzhenko", "Kostyuk", "Melnik", "Holub", "Kondratenko", "Petrushenko", "Rogov", "Kovalenko", "Hontar", "Ivashchenko"
+    "Zaporozhets","Kovalenko", "Bondarenko", "Tkachenko", "Kravchenko", "Omelchenko", "Kovalchuk", "Boyko", "Tkachuk", "Moroz", "Koval"
 };
 
     }
