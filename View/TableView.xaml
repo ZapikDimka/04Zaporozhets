@@ -1,0 +1,104 @@
+﻿<Window x:Class="_04Zaporozhets.View.TableView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Personal Information" Height="450" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхній рядок з кнопками -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0">
+            <Button x:Name="addPersonButton" Content="Add Person" Click="addPersonButton_Click" Margin="5"/>
+            <Button x:Name="removePersonButton" Content="Remove Person" Click="removePersonButton_Click" Margin="5"/>
+            <Button x:Name="saveButton" Content="Save" Click="SaveButton_Click" Margin="5"/>
+        </StackPanel>
+
+        <!-- Область з діаграмою даних -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+            <DataGrid x:Name="userGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" MouseDoubleClick="DataGrid_MouseDoubleClick">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstName, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter Property="Background" Value="LightGray"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Foreground" Value="Red"/>
+                                <Setter Property="Background" Value="LightYellow"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Birthday" Binding="{Binding Birthday, StringFormat='{}{0:dd.MM.yyyy}', Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Foreground" Value="Green"/>
+                                <Setter Property="Background" Value="LightBlue"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Age">
+                        <DataGridTextColumn.Binding>
+                            <MultiBinding StringFormat="{}{0} years, {1} months, {2} days">
+                                <Binding Path="AgeYears" />
+                                <Binding Path="AgeMonths" />
+                                <Binding Path="AgeDays" />
+                            </MultiBinding>
+                        </DataGridTextColumn.Binding>
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Foreground" Value="DarkRed"/>
+                                <Setter Property="Background" Value="LightGray"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Foreground" Value="Black"/>
+                                <Setter Property="Background" Value="LightYellow"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Western zodiac" Binding="{Binding SunSign, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Foreground" Value="DarkRed"/>
+                                <Setter Property="Background" Value="LightGray"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Chinese zodiac" Binding="{Binding ChineseSign, Mode=OneWay}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Foreground" Value="DarkGreen"/>
+                                <Setter Property="Background" Value="LightGray"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Is Adult">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsAdult, Mode=OneWay}" IsEnabled="False" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Is Birthday">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsBirthday, Mode=OneWay}" IsEnabled="False" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Window>
