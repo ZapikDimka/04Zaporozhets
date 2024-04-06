@@ -71,11 +71,12 @@ namespace _04Zaporozhets.View
 
 
 
-        private void onButtonClicked(object sender, RoutedEventArgs e)
+        private async void onButtonClicked(object sender, RoutedEventArgs e)
         {
             AgeCalculatorViewModel._checked = false;
             ButtonPressed();
-            MessageBox.Show("" + AgeCalculatorViewModel._checked);
+            await Task.Delay(1000);
+            _ = AgeCalculatorViewModel._checked.ToString();
             if (AgeCalculatorViewModel._checked)
             {
                 onSavePressed();
