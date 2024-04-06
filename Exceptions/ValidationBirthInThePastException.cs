@@ -11,7 +11,7 @@ namespace _04Zaporozhets
             this._message = message;
         }
 
-        public ValidationBirthInThePastException(string message, DateOnly dateTime) : this(("You are tooo old")){ }
+        public ValidationBirthInThePastException(string message, DateOnly dateTime) : this(("You are too old")) { }
 
         public override string Message
         {

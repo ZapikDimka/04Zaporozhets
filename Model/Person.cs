@@ -16,6 +16,7 @@ namespace _04Zaporozhets.ViewModel
         private string _firstName;
         public Person()
         {
+
         }
         public string FirstName
         {
@@ -66,7 +67,7 @@ namespace _04Zaporozhets.ViewModel
         public Person(string firstName, string lastName, DateOnly birthdate)
             : this(firstName, lastName, "", birthdate) { }
 
-        private void EmailValidation(string email)
+        public void EmailValidation(string email)
         {
             try
             {
@@ -78,7 +79,7 @@ namespace _04Zaporozhets.ViewModel
             }
         }
 
-        private void BirthdayValidation(DateOnly birthdate)
+        public void BirthdayValidation(DateOnly birthdate)
         {
             if (birthdate > DateOnly.FromDateTime(DateTime.Today))
                 throw new ValidationBirthInTheFutureException("", birthdate);

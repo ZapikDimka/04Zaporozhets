@@ -102,6 +102,9 @@ namespace _04Zaporozhets
         /// <returns>True if the property was updated; otherwise, false.</returns>
         protected bool UpdateProperty<T>(ref T property, T value, string propertyName, params string[] dependantPropertyNames)
         {
+            if (propertyName == null)
+                throw new ArgumentNullException(nameof(propertyName));
+
             if (EqualityComparer<T>.Default.Equals(property, value))
                 return false;
 
@@ -118,6 +121,7 @@ namespace _04Zaporozhets
 
             return true;
         }
+
 
 
 

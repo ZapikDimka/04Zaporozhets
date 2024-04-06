@@ -1,5 +1,5 @@
-﻿using _04Zaporozhets.ViewModel;
-using System;
+﻿using System;
+using System.Net.Mail; // Додано простір імен
 
 namespace _04Zaporozhets
 {
@@ -7,12 +7,12 @@ namespace _04Zaporozhets
     {
         private string _message;
 
-        public ValidationEmailException(string message)
+        public ValidationEmailException(string message) : base(message)
         {
             this._message = message;
         }
 
-        public ValidationEmailException(string message, string email) : this("prove your email")
+        public ValidationEmailException(string message, string email) : this("email is no corrct")
         {
         }
 
@@ -21,9 +21,22 @@ namespace _04Zaporozhets
             get { return _message; }
         }
 
-        internal void NotifyValidationError(AgeCalculatorViewModel ageCalculatorViewModel, string v)
+        public static bool IsValidEmail(string email)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public void NotifyValidationError(BaseBindable sender, string propertyName)
+        {
+            sender.AddPropertyError(propertyName, Message);
         }
     }
 }

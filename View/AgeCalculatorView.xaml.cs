@@ -73,7 +73,13 @@ namespace _04Zaporozhets.View
         private void onButtonClicked(object sender, RoutedEventArgs e)
         {
             ButtonPressed();
+
+            if (onSavePressed != null)
+            {
+                onSavePressed();
+            }
         }
+
 
         public void ButtonPressed()
         {
@@ -90,10 +96,7 @@ namespace _04Zaporozhets.View
             onTextChanged();
         }
 
-        private void onSaveButtonClicked(object sender, RoutedEventArgs e)
-        {
-            onSavePressed();
-        }
+
 
         private void onCancelButtonClicked(object sender, RoutedEventArgs e)
         {

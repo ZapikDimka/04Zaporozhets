@@ -40,12 +40,12 @@
                 <DatePicker Grid.Row="3" Grid.Column="1" x:Name="BirthdayPicker" Margin="5" SelectedDateChanged="onTextChanged_func" Text="{Binding Birthday, StringFormat='{}{0:dd.MM.yyyy}'}" Background="LightCoral"/>
             </Grid>
 
-            <Button x:Name="ProceedButton" Content="Proceed" Margin="5" Height="20" IsEnabled="False" Click="onButtonClicked"/>
+            
             <TextBox x:Name="OutputTextBox" Margin="5" Height="160" IsReadOnly="True"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="CancelButton" Content="Cancel" Margin="5" Height="20" Click="onCancelButtonClicked"/>
-                <Button x:Name="SaveButton" Content="Save" Margin="5" Height="20" Click="onSaveButtonClicked" IsEnabled="{Binding SaveButtonEnabled}" />
+                <Button x:Name="ProceedButton" Content="Save" Margin="5" Height="20" IsEnabled="False" Click="onButtonClicked"/>
             </StackPanel>
         </StackPanel>
     </Grid>
